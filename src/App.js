@@ -13,7 +13,7 @@ function App() {
   const [sortBy, setSortBy] = useState('');
 
   useEffect(() => {
-    fetch('https://my-json-server.typicode.com/Ashleywairimu92/wk2-code_challenge/bots')
+    fetch('https://my-json-server.typicode.com/Ashleywairimu92/Bot-battle/bots')
       .then((response) => response.json())
       .then((data) => setBots(data))
   }, []);
@@ -27,7 +27,7 @@ function App() {
 
   const dischargeBot = (bot) => {
     setArmy(army.filter(b => b.id !== bot.id));
-    fetch(`https://my-json-server.typicode.com/Ashleywairimu92/wk2-code_challenge/bots/${bot.id}`, {
+    fetch(`https://my-json-server.typicode.com/Ashleywairimu92/Bot-battle/bots/${bot.id}`, {
       method: 'DELETE',
     });
   };
